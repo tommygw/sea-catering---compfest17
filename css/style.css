@@ -78,6 +78,73 @@ body {
   font-family: var(--body-font-family); 
 }
 
+.details-card {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 20px;
+}
+
+.form-container {
+    background-color: var(--white-color);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    border: 1px solid var(--border-color);
+}
+
+.form-control, .form-select {
+    border-radius: var(--border-radius-small);
+    border-color: var(--border-color);
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(124, 181, 24, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius-small);
+    padding: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--white-color);
+    font-size: var(--btn-font-size);
+}
+
+.btn-primary:hover {
+    background-color: var(--custom-btn-bg-hover-color);
+    color: var(--white-color);
+}
+
+#total-price-display {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+}
+
+.form-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--p-color);
+}
+
+.form-check-label {
+    padding-left: 0.35rem;
+    cursor: pointer;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 
 /*---------------------------------------
   TYPOGRAPHY               
@@ -326,6 +393,18 @@ testimonials
   font-size: 14px;
   color: #888;
 }
+
+.rating-stars i {
+  font-size: 1.8rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.rating-stars i.active,
+.rating-stars i.hover {
+  color: gold;
+}
+
 
 @media (max-width: 768px) {
     .testimonials .section-heading h4 {
@@ -1158,6 +1237,33 @@ blockquote::before {
   width: 100%;
 }
 
+/*---------------------------------------
+  Login & Register Form              
+-----------------------------------------*/
+
+  .auth-modal .modal-content { border-radius: var(--border-radius-medium); border: none; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
+  .auth-modal .nav-tabs { border-bottom: none; }
+  .auth-modal .nav-tabs .nav-link { border: none; border-bottom: 3px solid transparent; color: #6c757d; font-weight: var(--font-weight-semibold); transition: all 0.3s ease; width: 90%; text-align: center; }
+  .auth-modal .nav-tabs .nav-link.active,
+  .auth-modal .nav-tabs .nav-link:hover { color: var(--primary-color); border-bottom-color: var(--primary-color); background-color: transparent; }
+  .auth-modal .modal-body { padding: 2rem; }
+  .auth-modal .form-control { border-radius: var(--border-radius-small); padding: 12px 20px; background-color: var(--section-bg-color); border: 1px solid var(--border-color); }
+  .auth-modal .form-control:focus { background-color: var(--white-color); border-color: var(--primary-color); box-shadow: 0 0 0 0.25rem rgba(124, 181, 24, 0.25); }
+  .auth-modal .form-group { position: relative; margin-bottom: 1.5rem; }
+  .auth-modal .form-group .form-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #adb5bd; }
+  .auth-modal .form-group .form-control { padding-left: 40px; }
+  .auth-modal .btn-submit {
+        width: 100%;
+        padding: 12px;
+        font-weight: var(--font-weight-semibold);
+        font-size: var(--btn-font-size);
+        background-color: var(--custom-btn-bg-color);
+        border-radius: var(--border-radius-large);
+  }
+  .auth-modal .btn-submit:hover {
+      background-color: var(--custom-btn-bg-hover-color);
+  }
+  .auth-modal .alert { border-radius: var(--border-radius-small); }
 
 /*---------------------------------------
   CUSTOM FORM               

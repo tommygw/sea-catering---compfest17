@@ -23,7 +23,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link scroll-link" href="#section_2">About Us</a>
+                            <a class="nav-link scroll-link" href="index.php#section_2">About Us</a>
                         </li>
 
                         <li class="nav-item">
@@ -31,15 +31,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link <?php if($current_page == 'subs.php') echo 'active'; ?>" href="index.php">Subscription</a>
+                            <a class="nav-link <?php if($current_page == 'subs.php') echo 'active'; ?>" href="subs.php">Subscription</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link scroll-link" href="#section_3">Contact</a>
+                            <a class="nav-link scroll-link" href="index.php#section_3">Contact</a>
                         </li>
                         
                         <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn" href="index.php">Login</a>
+                            <a class="nav-link custom-btn custom-border-btn btn" href="index.php"data-bs-toggle="modal" data-bs-target="#loginRegisterModal">Login</a>
                         </li>
                     </ul>
                 </div>

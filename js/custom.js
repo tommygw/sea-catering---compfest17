@@ -75,7 +75,94 @@
       }
     });
 
-    
+    $(document).ready(function () {
+      const $stars = $('#ratingStars i');
+      const $input = $('#ratingValue');
+      let currentRating = 0;
+
+      $stars.on('mouseenter', function () {
+        const hoverValue = parseInt($(this).data('value'));
+
+        $stars.each(function () {
+          const starValue = parseInt($(this).data('value'));
+          $(this).toggleClass('hover', starValue <= hoverValue);
+        });
+      });
+
+      $stars.on('mouseleave', function () {
+        $stars.removeClass('hover');
+
+        $stars.each(function () {
+          const starValue = parseInt($(this).data('value'));
+          $(this).toggleClass('active', starValue <= currentRating);
+        });
+      });
+
+      $stars.on('click', function () {
+        currentRating = parseInt($(this).data('value'));
+        $input.val(currentRating);
+
+        $stars.removeClass('active');
+        $stars.each(function () {
+          const starValue = parseInt($(this).data('value'));
+          $(this).toggleClass('active', starValue <= currentRating);
+        });
+      });
+    });
+
+    $('#show-detail').on('click', function () {
+    $('#plan-detail').slideDown(); 
+    $(this).hide(); 
+  });
+
+  $('#hide-detail').on('click', function () {
+    $('#plan-detail').slideUp();
+    $('#show-detail').show(); 
+  });
+
+  $('#toggle-detail').on('click', function () {
+  const detail = $('#plan-detail');
+  const icon = $('#toggle-icon');
+  const button = $(this);
+
+  detail.slideToggle(300, function () {
+    // setelah animasi selesai, baru cek dan ubah
+    if (detail.is(':visible')) {
+      icon.text('▲');
+      button.contents().filter(function() {
+        return this.nodeType === 3;
+      }).last().replaceWith(' Hide Plan Detail');
+    } else {
+      icon.text('▼');
+      button.contents().filter(function() {
+        return this.nodeType === 3;
+      }).last().replaceWith(' Show Plan Detail');
+    }
+  });
+});
+
+$(document).ready(function() {
+
+  // Login/Register Form submission feedback
+  function showFeedback(message, type) {
+      const feedbackDiv = $('#auth-feedback');
+      feedbackDiv.removeClass('d-none alert-success alert-danger').addClass(`alert alert-${type}`).text(message);
+  }
+
+  $("#loginForm, #registerForm").submit(function(e) {
+      e.preventDefault();
+      const formId = $(this).attr('id');
+      let message = (formId === 'loginForm') ? 'Login berhasil! Anda akan diarahkan...' : 'Registrasi berhasil! Silakan login.';
+      showFeedback(message, 'success');
+      setTimeout(() => {
+          $('#loginRegisterModal').modal('hide');
+      }, 2000);
+  });
+  
+});
+
+
+
   })(window.jQuery);
 
   

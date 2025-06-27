@@ -20,6 +20,8 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     </head>
     
     <body id="section_1">
@@ -258,6 +260,43 @@
 <?php
 include "footer.php";
 ?>
+
+    <div class="modal fade auth-modal" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-0">
+                <ul class="nav nav-tabs w-100" id="authTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="login-tab-pane" aria-selected="true">Login</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-tab-pane" type="button" role="tab" aria-controls="register-tab-pane" aria-selected="false">Register</button>
+                  </li>
+                </ul>
+            </div>
+          <div class="modal-body">
+              <div id="auth-feedback" class="d-none"></div>
+              <div class="tab-content" id="authTabContent">
+                <div class="tab-pane fade show active" id="login-tab-pane" role="tabpanel" tabindex="0">
+                    <form id="loginForm">
+                        <div class="form-group"><i class="fa fa-envelope form-icon"></i><input type="email" class="form-control" placeholder="Email" required></div>
+                        <div class="form-group"><i class="fa fa-lock form-icon"></i><input type="password" class="form-control" placeholder="Password" required></div>
+                        <button type="submit" class="btn btn-submit mt-4">Login</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="register-tab-pane" role="tabpanel" tabindex="0">
+                     <form id="registerForm">
+                        <div class="form-group"><i class="fa fa-user form-icon"></i><input type="text" class="form-control" placeholder="Full Name" required></div>
+                        <div class="form-group"><i class="fa fa-envelope form-icon"></i><input type="email" class="form-control" placeholder="Email" required></div>
+                        <div class="form-group"><i class="fa fa-lock form-icon"></i><input type="password" class="form-control" placeholder="Password" required></div>
+                        <button type="submit" class="btn btn-submit mt-4">Register</button>
+                    </form>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
