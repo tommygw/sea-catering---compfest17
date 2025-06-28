@@ -1,5 +1,6 @@
 <?php
     $current_page = basename($_SERVER['PHP_SELF']);
+    session_start();
 ?>
 
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
@@ -23,24 +24,41 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link scroll-link" href="index.php#section_2">About Us</a>
+                            <a class="nav-link scroll-link" href="index.php?page=home#section_2">About Us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link <?php if($current_page == 'meals.php') echo 'active'; ?>" href="meals.php">Meal Plans</a>
+                            <a class="nav-link" href="index.php?page=meals">Meal Plans</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link <?php if($current_page == 'subs.php') echo 'active'; ?>" href="subs.php">Subscription</a>
+                            <a class="nav-link" href="index.php?page=subscription">Subscription</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link scroll-link" href="index.php#section_3">Contact</a>
+                            <a class="nav-link scroll-link" href="index.php?page=home#section_3">Contact</a>
                         </li>
                         
+                        <?php
+                            if (isset($_SESSION['email'])) {
+                        ?>
+                        <li class="nav-item dropdown ms-3">
+                            <a class="nav-link dropdown-toggle btn custom-btn custom-border-btn" href="#" id="userDropdown" data-bs-toggle="dropdown">
+                                <?php echo htmlspecialchars($_SESSION['full_name']); ?>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="dashboard_user.php">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="auth/logout.php">Logout</a></li>
+                            </ul>
+                        </li>
+                        <?php
+                        } else{?>
                         <li class="nav-item ms-3">
                             <a class="nav-link custom-btn custom-border-btn btn" href="index.php"data-bs-toggle="modal" data-bs-target="#loginRegisterModal">Login</a>
                         </li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>

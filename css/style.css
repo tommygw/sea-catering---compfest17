@@ -303,19 +303,6 @@ strong {
 
 
 /*---------------------------------------
-  PROGRESS BAR               
------------------------------------------*/
-.progress {
-  background: var(--border-color);
-  height: 5px;
-}
-
-.progress-bar {
-  background: var(--secondary-color);
-}
-
-
-/*---------------------------------------
   CUSTOM ICON COLOR               
 -----------------------------------------*/
 .custom-icon {
@@ -909,28 +896,6 @@ testimonials
 
 
 /*---------------------------------------
-  DONATE              
------------------------------------------*/
-.donate-section {
-  background-image: url('../images/different-people-doing-volunteer-work.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  padding-top: 150px;
-  padding-bottom: 150px;
-}
-
-.donate-form {
-  background: var(--white-color);
-  border-radius: var(--border-radius-medium);
-  position: relative;
-  overflow: hidden;
-  padding: 50px;
-}
-
-
-/*---------------------------------------
   NEWS         
 -----------------------------------------*/
 .news-detail-header-section {
@@ -1293,9 +1258,6 @@ blockquote::before {
   margin-bottom: 20px;
 }
 
-.donate-form .form-check-group-donation-frequency {
-  padding-right: 0;
-}
 
 .form-check-group-donation-frequency + .form-check-group-donation-frequency {
   padding-right: 12px;
