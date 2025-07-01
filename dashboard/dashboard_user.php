@@ -20,7 +20,7 @@ $query ="SELECT s.subscription_id, s.fullname_subs, mp.name AS meal_plans,
         INNER JOIN subscriptionmealtypes smt ON s.subscription_id = smt.subscription_id
         INNER JOIN subscriptiondeliverydays ssd ON s.subscription_id = ssd.subscription_id
         INNER JOIN users u ON s.user_id = u.user_id
-        WHERE email = '$email' AND s.status != 'canceled'
+        WHERE email = '$email' AND s.status != 'cancelled'
         GROUP BY s.subscription_id, s.fullname_subs, mp.name, s.total_price, s.status, s.pause_start_date, s.pause_end_date;" ;
 
 $result = mysqli_query($conn, $query);

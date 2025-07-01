@@ -48,7 +48,7 @@ if (isset($_POST['register'])) {
                 ?>
                 <script type="text/javascript">
                     alert('Your Email was Registered !');
-                    window.location.assign('meals.php');
+                    window.location.assign('../index.php');
                 </script>
                 <?php
                 exit();

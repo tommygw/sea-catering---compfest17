@@ -75,6 +75,14 @@ http://localhost/sea-catering---compfest17/
 
 ---
 
+## 🌐 Deployment
+
+You can view the deployed version of the site at:
+
+🔗 **[https://seacompfest17tommy.wuaze.com/](https://seacompfest17tommy.wuaze.com/)**
+
+---
+
 ## 📁 Project Structure
 
 ```
