@@ -1,6 +1,5 @@
 <?php
     $current_page = basename($_SERVER['PHP_SELF']);
-    session_start();
 ?>
 
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
@@ -47,7 +46,19 @@
                                 <?php echo htmlspecialchars($_SESSION['full_name']); ?>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="dashboard_user.php">Dashboard</a></li>
+                                <?php
+                                    include 'auth/db_connect.php';
+                                    $email = $_SESSION['email'];
+                                    $query = "SELECT role FROM users WHERE email = '$email'";
+                                    $result = mysqli_query($conn, $query);
+                                    $user = mysqli_fetch_assoc($result);
+
+                                    if ($user['role'] === 'admin') {
+                                        echo '<li><a class="dropdown-item" href="?page=dashboard_admin">Dashboard</a></li>';
+                                    } else {
+                                        echo '<li><a class="dropdown-item" href="?page=dashboard_user">Dashboard</a></li>';
+                                    }
+                                ?>
                                 <li><a class="dropdown-item" href="auth/logout.php">Logout</a></li>
                             </ul>
                         </li>

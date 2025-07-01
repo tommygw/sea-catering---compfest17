@@ -154,117 +154,47 @@
     });
 
 
-$(document).ready(function() {
+$(function() {
 
-    const planData = {
-        diet: { name: 'Diet Plan', price: 30000 },
-        protein: { name: 'Protein Plan', price: 40000 },
-        royal: { name: 'Royal Plan', price: 60000 }
-    };
-
-    const currencyFormatter = new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0
-    });
-
-    function updateSummary() {
-        const selectedPlan = $('#plan').val();
-        
-        const mealTypes = $('input[name="meal_type[]"]:checked').map(function() {
-            return $(this).val();
-        }).get();
-
-        const deliveryDays = $('input[name="delivery_days[]"]:checked').map(function() {
-            return $(this).val();
-        }).get();
-        
-        const plan = planData[selectedPlan];
-        if (!plan) { 
-            $('#summary-plan-title').text('Subscribe to ... Plan');
-            $('#summary-total-price').text('Rp0');
-            $('#detail-plan-name').text('No plan selected');
-            $('#detail-plan-price').text('Rp0 per meal');
-            $('#calculation-string').text('Select options to see calculation');
-            return;
-        }
-
-        const pricePerMeal = plan.price;
-        const numMeals = mealTypes.length;
-        const numDays = deliveryDays.length;
-        const totalWeeklyPrice = pricePerMeal * numMeals * numDays;
-        
-        $('#summary-plan-title').text(`Subscribe to ${plan.name}`);
-        $('#summary-total-price').text(currencyFormatter.format(totalWeeklyPrice));
-        
-        $('#detail-plan-name').text(plan.name);
-        $('#detail-plan-price').text(`${currencyFormatter.format(pricePerMeal)} per meal`);
-        
-        $('#detail-meal-types').text(mealTypes.join(', ') || 'None');
-        $('#detail-meal-count').text(`${numMeals} meal type(s)`);
-        
-        const daysHtml = deliveryDays.length > 0
-            ? deliveryDays.map(day => `<li><b>${day}</b></li>`).join('')
-            : '<li>None</li>';
-        $('#detail-delivery-days-list').html(daysHtml);
-        $('#detail-delivery-days-count').text(`${numDays} day(s)`);
-
-        const calculationHtml = `
-            ${currencyFormatter.format(pricePerMeal)} 
-            <small class="text-muted">x</small> ${numMeals} meal(s) 
-            <small class="text-muted">x</small> ${numDays} day(s) 
-            <strong class="ms-1">= ${currencyFormatter.format(totalWeeklyPrice)}</strong>
-        `;
-        $('#calculation-string').html(calculationHtml);
-    }
-    
-    if (typeof initialPlanFromPHP !== 'undefined' && initialPlanFromPHP) {
-        $('#plan').val(initialPlanFromPHP);
-    }
-
-    $('#plan, input[name="meal_type[]"], input[name="delivery_days[]"]').on('change', function() {
-        updateSummary();
-    });
-
-    updateSummary();
-
-    $('#toggle-detail').on('click', function() {
-        const detail = $('#plan-detail');
-        const icon = $('#toggle-icon');
-        const button = $(this);
-
-        detail.slideToggle(300, function() {
-            if (detail.is(':visible')) {
-                icon.text('▲');
-                button.contents().filter(function() {
-                    return this.nodeType === 3; 
-                }).last().replaceWith(' Hide Plan Detail');
-            } else {
-                icon.text('▼');
-                button.contents().filter(function() {
-                    return this.nodeType === 3;
-                }).last().replaceWith(' Show Plan Detail');
-            }
+    if ($('#date-range-picker').length) { 
+        $('#date-range-picker').daterangepicker({
+            ranges: {
+                'Hari Ini': [moment(), moment()],
+                'Kemarin': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '7 Hari Terakhir': [moment().subtract(6, 'days'), moment()],
+                '30 Hari Terakhir': [moment().subtract(29, 'days'), moment()],
+                'Bulan Ini': [moment().startOf('month'), moment().endOf('month')],
+                'Bulan Lalu': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            "locale": {
+                "format": "DD/MM/YYYY",
+                "separator": " - ",
+                "applyLabel": "Terapkan",
+                "cancelLabel": "Batal",
+                "fromLabel": "Dari",
+                "toLabel": "Ke",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
+                "monthNames": ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+                "firstDay": 1
+            },
+            "startDate": moment().startOf('month'),
+            "endDate": moment().endOf('month')
+        }, function(start, end, label) {
+            
+            $('#date-range-picker span').html(start.format('D MMMM YYYY') + ' - ' + end.format('D MMMM YYYY'));
         });
-    });
-    
-    $('#subscription-form').on('submit', function(e){
-         if($('input[name="meal_type[]"]:checked').length === 0){
-             alert('Please select at least one Meal Type.');
-             e.preventDefault();
-             return;
-         }
-         if($('input[name="delivery_days[]"]:checked').length === 0){
-             alert('Please select at least one Delivery Day.');
-             e.preventDefault();
-             return;
-         }
-    });
 
+
+        var start = moment().startOf('month');
+        var end = moment().endOf('month');
+        $('#date-range-picker span').html(start.format('D MMMM YYYY') + ' - ' + end.format('D MMMM YYYY'));
+    }
 });
 
   })(window.jQuery);
 
-  
+
 
 

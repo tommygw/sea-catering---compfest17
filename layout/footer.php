@@ -10,15 +10,10 @@
                         <h5 class="site-footer-title mb-3">Quick Links</h5>
 
                         <ul class="footer-menu">
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">About Us</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Blog</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Recipes</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Career</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Partner with us</a></li>
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Meal Plans</a></li>
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Custom Catering</a></li>
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Corporate Packages</a></li>
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Healthy Snack Box</a></li>
                         </ul>
                     </div>
 
@@ -60,23 +55,26 @@
                         <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
                             <ul class="social-icon">
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                    <a href="https://twitter.com/COMPFEST/" class="social-icon-link bi-twitter-x"></a>
                                 </li>
 
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                    <a href="https://www.facebook.com/COMPFEST/" class="social-icon-link bi-facebook"></a>
                                 </li>
 
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                    <a href="https://www.instagram.com/compfest/" class="social-icon-link bi-instagram"></a>
                                 </li>
 
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-linkedin"></a>
+                                    <a href="https://www.linkedin.com/company/compfest/" class="social-icon-link bi-linkedin"></a>
                                 </li>
 
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-youtube"></a>
+                                    <a href="https://medium.com/compfest/" class="social-icon-link bi-youtube"></a>
+                                </li>
+                                <li class="social-icon-item">
+                                    <a href="https://medium.com/compfest/" class="social-icon-link bi bi-medium"></a>
                                 </li>
                             </ul>
                         </div>

@@ -1,3 +1,5 @@
+<?php include 'auth/login-register.php';?>
+            
             <section class="hero-section hero-section-full-height">
                 <div class="container-fluid">
                     <div class="row">
@@ -96,7 +98,7 @@
                         </div>
 
                         <div class="col-lg-3 d-flex justify-content-center mx-auto">
-                            <a href="?page=meals" class="custom-btn btn smoothscroll">See Pricing & Plans</a>
+                            <a href="?page=meals" class="custom-btn btn">See Pricing & Plans</a>
                         </div>
 
                     </div>
@@ -191,7 +193,7 @@
                         </div>
 
                         <div class="col-lg-5 col-12 mx-auto">
-                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                            <form class="custom-form contact-form" action="contact/process_contact.php" method="post" role="form">
                                 <h2>Contact form</h2>
 
                                 <p class="mb-4">Or, you can just send an email:

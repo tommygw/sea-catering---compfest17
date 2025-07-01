@@ -1,6 +1,6 @@
 <?php
 include 'auth/db_connect.php';
-
+include 'auth/login-register.php';
 $query = "SELECT * FROM mealplans";
 $result = mysqli_query($conn, $query);
 
@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $query);
                           <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                             <a data-bs-toggle="modal" data-bs-target="#menuModal<?= $index ?>" class="text-decoration-none text-dark">
                               <div class="custom-block-wrap">
-                                <img src="<?= htmlspecialchars($row['image_url']) ?>" class="img-fluid" alt="">
+                                <img src="<?= htmlspecialchars($row['image_url']) ?>" class="img-fluid meal-image" alt="">
                                 <div class="custom-block">
                                   <div class="custom-block-body">
                                     <h5 class="mb-3"><?= htmlspecialchars($row['name']) ?></h5>

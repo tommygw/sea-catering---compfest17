@@ -39,7 +39,7 @@ if (isset($_POST['register'])) {
                     ?>
                     <script type="text/javascript">
                         alert('Register Failed !');
-                        window.location.assign('index.php');
+                        window.location.assign('../index.php');
                     </script>
                     <?php
                     exit();
@@ -57,7 +57,7 @@ if (isset($_POST['register'])) {
             ?>
             <script type="text/javascript">
                 alert('Passwords do not match!');
-                window.location.assign('index.php');
+                window.location.assign('../index.php');
             </script>
             <?php
         } 
@@ -65,7 +65,7 @@ if (isset($_POST['register'])) {
             ?>
             <script type="text/javascript">
                 alert('Register Failed !');
-                window.location.assign('index.php');
+                window.location.assign('../index.php');
             </script>
             <?php
         } 

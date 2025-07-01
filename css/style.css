@@ -1050,6 +1050,11 @@ blockquote::before {
   height: 150px;
 }
 
+.meal-image {
+    max-height: 666px;
+    object-fit: cover;
+    width: 100%;
+}
 
 /*---------------------------------------
   TESTIMONIAL CAROUSEL              
